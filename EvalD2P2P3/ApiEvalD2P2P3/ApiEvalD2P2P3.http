@@ -1,0 +1,6 @@
+@ApiEvalD2P2P3_HostAddress = http://localhost:5039
+
+GET {{ApiEvalD2P2P3_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
