@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiEvalD2P2P3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57337287a0a55945b114a65eb331fc0a3944512c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b547b9b8ab76048029a83c376fa806259cfe7e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiEvalD2P2P3")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiEvalD2P2P3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
