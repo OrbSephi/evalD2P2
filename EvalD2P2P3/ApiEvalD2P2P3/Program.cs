@@ -1,4 +1,6 @@
 using ApiEvalD2P2P3.DB;
+using ApiEvalD2P2P3.Encryption;
+
 //using ApiEvalD2P2P3.Middlewares;
 using ApiEvalD2P2P3.Repositories;
 using ApiEvalD2P2P3.Services;
@@ -22,6 +24,7 @@ builder.Services.AddScoped<IPasswordService, PasswordService>();
 builder.Services.AddScoped<IPasswordRepository, PasswordRepository>();
 //builder.Services.AddScoped<ApiKeyMiddleware>();
 //builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+builder.Services.AddSingleton<EncryptionStrategyFactory>();
 
 var app = builder.Build();
 

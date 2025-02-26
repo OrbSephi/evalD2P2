@@ -7,12 +7,18 @@
 
     public class AESEncryptionStrategy : IEncryptionStrategy
     {
-        private readonly string _key = "MySuperSecureKey123"; // Clé symétrique (à stocker de manière sécurisée)
+        private readonly byte[] _key;
+
+        public AESEncryptionStrategy(string key)
+        {
+            using var sha256 = SHA256.Create();
+            _key = sha256.ComputeHash(Encoding.UTF8.GetBytes(key)); // Génère une clé de 32 octets
+        }
 
         public string Encrypt(string plainText)
         {
             using Aes aes = Aes.Create();
-            aes.Key = Encoding.UTF8.GetBytes(_key);
+            aes.Key = _key;
             aes.GenerateIV(); // Génère un IV unique
 
             using var encryptor = aes.CreateEncryptor();
@@ -22,7 +28,7 @@
             return Convert.ToBase64String(aes.IV) + ":" + Convert.ToBase64String(encrypted);
         }
 
-        public string Decrypt(string encryptedText, string? key = null)
+        public string Decrypt(string encryptedText)
         {
             var parts = encryptedText.Split(':');
             if (parts.Length != 2) throw new ArgumentException("Format incorrect");
@@ -31,7 +37,7 @@
             byte[] cipherText = Convert.FromBase64String(parts[1]);
 
             using Aes aes = Aes.Create();
-            aes.Key = Encoding.UTF8.GetBytes(_key);
+            aes.Key = _key;
             aes.IV = iv;
 
             using var decryptor = aes.CreateDecryptor();
@@ -40,5 +46,4 @@
             return Encoding.UTF8.GetString(decrypted);
         }
     }
-
 }

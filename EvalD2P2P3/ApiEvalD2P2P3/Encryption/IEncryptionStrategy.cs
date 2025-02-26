@@ -3,7 +3,7 @@
     public interface IEncryptionStrategy
     {
         string Encrypt(string plainText);
-        string Decrypt(string encryptedText, string? key = null);
+        string Decrypt(string encryptedText);
     }
 
 }

@@ -88,6 +88,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EncryptionController",
+    "Method": "Encrypt",
+    "RelativePath": "api/Encryption/encrypt",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "text",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiEvalD2P2P3.Controllers.PasswordController",
     "Method": "GetPasswords",
     "RelativePath": "api/Password",
@@ -97,7 +118,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiEvalD2P2P3.Entities.PasswordEntity, ApiEvalD2P2P3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiEvalD2P2P3.Dto.PasswordDto, ApiEvalD2P2P3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -116,14 +137,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "password",
-        "Type": "ApiEvalD2P2P3.Entities.PasswordEntity",
+        "Name": "dto",
+        "Type": "ApiEvalD2P2P3.Dto.PasswordDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "ApiEvalD2P2P3.Entities.PasswordEntity",
+        "Type": "ApiEvalD2P2P3.Dto.PasswordDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -149,7 +170,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ApiEvalD2P2P3.Entities.PasswordEntity",
+        "Type": "ApiEvalD2P2P3.Dto.PasswordDto",
         "MediaTypes": [
           "text/plain",
           "application/json",

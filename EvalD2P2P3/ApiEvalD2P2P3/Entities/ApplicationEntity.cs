@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ApiEvalD2P2P3.Entities
 {
@@ -8,6 +9,7 @@ namespace ApiEvalD2P2P3.Entities
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public ApplicationType Type { get; set; }
+        [JsonIgnore]
         public ICollection<PasswordEntity> Passwords { get; set; } = new List<PasswordEntity>();
     }
 
